@@ -1,12 +1,16 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import Navigation from './src/components/Navigation';
-import {store} from './src/store';
+
+import {StatusBar, useColorScheme} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import Navigation from './src/navigation/Navigation.js';
+
 const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <Provider store={store}>
+    <SafeAreaProvider>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Navigation />
-    </Provider>
+    </SafeAreaProvider>
   );
 };
 
