@@ -8,9 +8,10 @@ import {
   View,
 } from 'react-native';
 import {userStore} from '../store/userStore';
+import Loading from '../components/Loading';
 
 const LoginScreen = ({navigation}) => {
-  const {user, error, authLogin} = userStore();
+  const {user, error, authLogin, loading} = userStore();
   // if (user) {
   //   return navigation.navigate('Home');
   // }
@@ -26,6 +27,9 @@ const LoginScreen = ({navigation}) => {
     if (error) {
       setErrors(error);
     }
+  }
+  if (loading) {
+    return <Loading />;
   }
   return (
     <SafeAreaView

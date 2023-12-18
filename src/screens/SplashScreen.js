@@ -12,7 +12,7 @@ const SplashScreen = ({navigation}) => {
       // await AsyncStorage.removeItem('@ht:token');
       const data = await AsyncStorage.getItem('@ht:user');
       if (data !== null) {
-        return navigation.navigate('Home');
+        return navigation.navigate('Main');
       } else {
         return navigation.navigate('Login');
       }

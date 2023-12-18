@@ -1,15 +1,15 @@
+import {View, Text, ScrollView, Image} from 'react-native';
 import React from 'react';
-import {Button, Text, View} from 'react-native';
-import {userStore} from '../store/userStore';
 
-const HomeScreen = ({navigation}) => {
-  const {authLogout} = userStore();
-
+const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-      <Button title="Đăng xuất" onPress={() => authLogout(navigation)}></Button>
-    </View>
+    <ScrollView style={{backgroundColor: '#fff'}}>
+      <Image source={require('../assets/home.png')} />
+      <Text style={{backgroundColor: 'orange', marginBottom: 1000}}>
+        HomeScreen
+      </Text>
+      <Text style={{backgroundColor: 'red'}}>HomeScreen</Text>
+    </ScrollView>
   );
 };
 
